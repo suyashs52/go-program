@@ -10,4 +10,4 @@ func main() {
 // go doc Sum for reading doc about Sum function
 //go doc fmt.Printf
 //go help doc
-//go doc -http=:8083
+//godoc -http=:8083 //need to install godoc using go install golang.org/x/tools/cmd/godoc@latest
