@@ -1,0 +1,34 @@
+package leetcode
+
+func main() {
+
+}
+
+//  Definition for a binary tree node.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+func goodNodes(root *TreeNode) int {
+
+	return nodes(root, root.Val, root.Val)
+
+}
+
+func nodes(root *TreeNode, curr, max int) int {
+	if root == nil {
+		return 0
+	}
+	if max < root.Val {
+		max = root.Val
+	}
+
+	if root.Val == max {
+		return 1 + nodes(root.Left, 0, max) + nodes(root.Right, 0, max)
+	}
+
+	return nodes(root.Left, 0, max) + nodes(root.Right, 0, max)
+
+}
